@@ -132,4 +132,4 @@ This project highlights how linear algebra techniques can extract meaningful str
 
 ## Author
 
-Developed as part of a Numerical Methods course (2025).
+KP Dixit
