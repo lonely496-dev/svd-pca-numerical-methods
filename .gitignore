@@ -1,0 +1,22 @@
+# MATLAB
+*.asv
+*.mex*
+*.mlx.bak
+slprj/
+*.slxc
+*.autosave
+
+# Dataset files (large / licensed — download separately from course portal)
+data/*.mat
+*.mat
+
+# Output files
+*.fig
+*.eps
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
