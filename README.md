@@ -1,20 +1,20 @@
 # SVD & PCA Numerical Analysis
 ### Singular Value Decomposition · Principal Component Analysis · Dimensionality Reduction
 
-A MATLAB-based project demonstrating how **Singular Value Decomposition (SVD)** and **Principal Component Analysis (PCA)** can be applied to real-world datasets for dimensionality reduction, data compression, visualization, and pattern discovery.
+This project applies **Singular Value Decomposition (SVD)** and **Principal Component Analysis (PCA)** to different datasets to study dimensionality reduction, image reconstruction, and data structure.
 
 ---
 
 ## Overview
 
-High-dimensional datasets are often costly to store, computationally intensive to process, and difficult to interpret. This project explores how SVD—serving as the mathematical foundation of PCA—addresses these challenges through:
+Working with high-dimensional data can make analysis and visualization difficult. This project shows how SVD and PCA can be used to:
 
-- Efficient **dimensionality reduction** while preserving key information  
-- **Image compression** via low-rank matrix approximations  
-- Identification of **hidden structures and patterns** in data  
-- Evaluation of **reconstruction error** relative to retained components  
+- Reduce dimensionality while keeping the main structure  
+- Reconstruct images using fewer components  
+- Visualize patterns in data  
+- Measure reconstruction error as components increase  
 
-The analysis spans synthetic and real-world datasets, demonstrating both theoretical and practical applications.
+The methods are tested on both synthetic and real datasets.
 
 ---
 
@@ -22,10 +22,10 @@ The analysis spans synthetic and real-world datasets, demonstrating both theoret
 
 | Dataset | Dimensions | Description |
 |--------|-----------|-------------|
-| `ModelReductionData.mat` | 6 × 4000 | Synthetic high-dimensional dataset |
+| `ModelReductionData.mat` | 6 × 4000 | Synthetic dataset |
 | `HandwrittenDigits.mat` | 256 × 1707 | 16×16 grayscale digit images (0, 1, 3, 7) |
 | `IrisDataAnnotated.mat` | 4 × 150 | Iris dataset with 3 species |
-| `Yale_64x64.mat` | 4096 × 165 | Face images (64×64), multiple subjects |
+| `Yale_64x64.mat` | 4096 × 165 | Face images (64×64) |
 
 ---
 
@@ -33,58 +33,66 @@ The analysis spans synthetic and real-world datasets, demonstrating both theoret
 
 ### 1. Model Data Reduction
 
-All 15 pairwise projections reveal strong linear correlations, indicating that the data lies in a lower-dimensional subspace.
+The pairwise projections show strong linear relationships, suggesting the data lies in a lower-dimensional space.
 
-![Pairwise Projections](figures/model_projections.png)
+<p align="center">
+  <img src="figures/model_projections.png" width="550"/>
+</p>
 
-The singular value spectrum shows a clear elbow, confirming that only a few components capture most of the variance.
+The singular values drop sharply, indicating that only a few components are needed.
 
-![Singular Values](figures/singular_values.png)
+<p align="center">
+  <img src="figures/singular_values.png" width="450"/>
+</p>
 
-Principal component projections further reinforce the low-dimensional structure.
+Principal component projections confirm the same structure.
 
-![PCA Scatter](figures/pca_scatter.png)
+<p align="center">
+  <img src="figures/pca_scatter.png" width="500"/>
+</p>
 
 ---
 
 ### 2. Handwritten Digit Reconstruction
 
-SVD-based reconstruction demonstrates progressive improvement as the number of components increases.
+Reconstruction improves as more components are used.
 
-![Digit Approximations](figures/digit_approximations.png)
+<p align="center">
+  <img src="figures/digit_approximations.png" width="550"/>
+</p>
 
-- Low \( k \): blurry but recognizable shapes  
-- High \( k \): sharper, more detailed reconstructions  
+- Low k → rough shapes  
+- High k → clearer details  
 
-Residuals transition from structured patterns to noise:
+Residuals become less structured as more information is captured:
 
-![Digit Residuals](figures/digit_residuals.png)
+<p align="center">
+  <img src="figures/digit_residuals.png" width="500"/>
+</p>
 
-The reconstruction error decreases consistently with increasing components:
+Error decreases consistently with increasing components:
 
-![Error Norms](figures/error_norms.png)
+<p align="center">
+  <img src="figures/error_norms.png" width="450"/>
+</p>
 
 ---
 
-### 3. Iris Dataset (PCA Clustering)
+### 3. Iris Dataset (PCA)
 
-Projection onto the first two principal components reveals clear structure:
+Projecting onto two principal components shows:
 
-- *Setosa* forms a well-separated cluster  
-- *Versicolor* and *Virginica* partially overlap  
-
-This highlights PCA’s effectiveness for visualization and exploratory analysis.
+- Clear separation of *Setosa*  
+- Partial overlap between *Versicolor* and *Virginica*  
 
 ---
 
 ### 4. Yale Face Dataset (Eigenfaces)
 
-SVD produces **eigenfaces**, capturing dominant facial patterns.
+SVD produces basis images (eigenfaces) that capture the main variations in faces.
 
-- Low-rank approximations progressively recover facial detail  
-- Most variance is captured in a small number of components  
-
-This demonstrates efficient image compression and feature extraction.
+- Increasing components improves reconstruction quality  
+- Most information is captured in relatively few components  
 
 ---
 
@@ -99,33 +107,28 @@ svd-pca-numerical-analysis/
 │   ├── problem3_iris_pca.m
 │   └── problem4_yale_faces.m
 │
-├── figures/                # Output visualizations
-├── data/                   # Input datasets (.mat files)
+├── figures/
+├── data/
 └── docs/
     └── Report.pdf
 ```
 
-> Dataset files are excluded via `.gitignore`. Place all `.mat` files in the `data/` directory before running the scripts.
+> Place all `.mat` files in the `data/` directory before running the scripts.
 
 ---
 
 ## Requirements
 
 - MATLAB R2020b or later  
-- No additional toolboxes required  
 
 ---
 
 ## Getting Started
 
-Clone the repository:
-
 ```bash
 git clone https://github.com/lonely496-dev/svd-pca-numerical-methods.git
 cd svd-pca-numerical-methods
 ```
-
-Run the scripts in MATLAB:
 
 ```matlab
 run('src/problem1_model_reduction.m')
@@ -144,13 +147,6 @@ run('src/problem4_yale_faces.m')
 - Dimensionality Reduction  
 - Eigenfaces  
 - Reconstruction Error  
-- Singular Value Spectrum  
-
----
-
-## Conclusion
-
-This project demonstrates how linear algebra techniques can extract meaningful structure from high-dimensional data while improving efficiency and interpretability. Across multiple datasets, SVD and PCA consistently reveal underlying patterns, reduce redundancy, and enable effective compression.
 
 ---
 
