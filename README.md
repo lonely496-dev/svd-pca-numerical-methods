@@ -66,6 +66,7 @@ SVD generates **eigenfaces**, representing dominant facial patterns across light
 ---
 
 ## Project Structure
+```
 
 svd-pca-numerical-analysis/
 │
@@ -86,6 +87,7 @@ svd-pca-numerical-analysis/
 **Note:** Dataset files are excluded via `.gitignore`. Place all `.mat` files inside the `data/` directory before execution.
 
 ---
+```
 
 ## Requirements
 
@@ -97,6 +99,7 @@ svd-pca-numerical-analysis/
 ## Getting Started
 
 Clone the repository:
+```
 
 git clone https://github.com/lonely496-dev/svd-pca-numerical-methods.git  
 cd svd-pca-numerical-methods  
@@ -109,6 +112,7 @@ run('src/problem3_iris_pca.m')
 run('src/problem4_yale_faces.m')  
 
 ---
+```
 
 ## Core Concepts
 
