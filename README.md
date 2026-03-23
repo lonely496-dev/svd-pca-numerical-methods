@@ -84,8 +84,6 @@ svd-pca-numerical-analysis/
 └── docs/
     └── Report.pdf
 
-**Note:** Dataset files are excluded via `.gitignore`. Place all `.mat` files inside the `data/` directory before execution.
-
 ---
 ```
 
