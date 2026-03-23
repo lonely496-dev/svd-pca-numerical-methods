@@ -22,10 +22,10 @@ The analysis spans synthetic and real-world datasets, demonstrating both theoret
 
 | Dataset | Dimensions | Description |
 |--------|-----------|-------------|
-| ModelReductionData.mat | 6 × 4000 | Synthetic high-dimensional dataset |
-| HandwrittenDigits.mat | 256 × 1707 | 16×16 grayscale digit images (0,1,3,7) |
-| IrisDataAnnotated.mat | 4 × 150 | Iris dataset with 3 species |
-| Yale_64x64.mat | 4096 × 165 | Face images (64×64), multiple subjects |
+| `ModelReductionData.mat` | 6 × 4000 | Synthetic high-dimensional dataset |
+| `HandwrittenDigits.mat` | 256 × 1707 | 16×16 grayscale digit images (0, 1, 3, 7) |
+| `IrisDataAnnotated.mat` | 4 × 150 | Iris dataset with 3 species |
+| `Yale_64x64.mat` | 4096 × 165 | Face images (64×64), multiple subjects |
 
 ---
 
@@ -53,8 +53,8 @@ SVD-based reconstruction demonstrates progressive improvement as the number of c
 
 ![Digit Approximations](figures/digit_approximations.png)
 
-- Low k → blurry but recognizable shapes  
-- High k → sharper, more detailed reconstructions  
+- Low \( k \): blurry but recognizable shapes  
+- High \( k \): sharper, more detailed reconstructions  
 
 Residuals transition from structured patterns to noise:
 
@@ -62,7 +62,7 @@ Residuals transition from structured patterns to noise:
 
 The reconstruction error decreases consistently with increasing components:
 
-![Error Norm](figures/error_norms.png)
+![Error Norms](figures/error_norms.png)
 
 ---
 
@@ -103,3 +103,57 @@ svd-pca-numerical-analysis/
 ├── data/                   # Input datasets (.mat files)
 └── docs/
     └── Report.pdf
+```
+
+> Dataset files are excluded via `.gitignore`. Place all `.mat` files in the `data/` directory before running the scripts.
+
+---
+
+## Requirements
+
+- MATLAB R2020b or later  
+- No additional toolboxes required  
+
+---
+
+## Getting Started
+
+Clone the repository:
+
+```bash
+git clone https://github.com/lonely496-dev/svd-pca-numerical-methods.git
+cd svd-pca-numerical-methods
+```
+
+Run the scripts in MATLAB:
+
+```matlab
+run('src/problem1_model_reduction.m')
+run('src/problem2_handwritten_digits.m')
+run('src/problem3_iris_pca.m')
+run('src/problem4_yale_faces.m')
+```
+
+---
+
+## Core Concepts
+
+- Singular Value Decomposition (SVD)  
+- Principal Component Analysis (PCA)  
+- Low-Rank Approximation  
+- Dimensionality Reduction  
+- Eigenfaces  
+- Reconstruction Error  
+- Singular Value Spectrum  
+
+---
+
+## Conclusion
+
+This project demonstrates how linear algebra techniques can extract meaningful structure from high-dimensional data while improving efficiency and interpretability. Across multiple datasets, SVD and PCA consistently reveal underlying patterns, reduce redundancy, and enable effective compression.
+
+---
+
+## Author
+
+KP Dixit
