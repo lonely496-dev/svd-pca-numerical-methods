@@ -78,8 +78,8 @@ svd-pca-numerical-analysis/
 │   ├── problem3_iris_pca.m
 │   └── problem4_yale_faces.m
 │
-├── figures/                # Generated plots
-├── data/                   # Input datasets (.mat files)
+├── figures/          
+├── data/       # Input datasets (.mat files)
 │
 └── docs/
     └── Report.pdf
