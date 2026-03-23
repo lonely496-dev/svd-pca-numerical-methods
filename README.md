@@ -1,4 +1,4 @@
-# Numerical Methods — Assignment 1
+# svd-pca-numerical-analysis
 ### SVD, PCA & Dimensionality Reduction
 
 > **Course:** Numerical Methods &nbsp;|&nbsp; **Professor:** Rosanna Campagna &nbsp;|&nbsp; **Student:** Syed Hurair Ahmed Saha &nbsp;|&nbsp; **Due:** July 16, 2025
